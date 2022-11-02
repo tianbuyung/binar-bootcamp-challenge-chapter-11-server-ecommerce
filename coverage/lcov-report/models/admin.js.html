@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for server_ecommerce/app.js</title>
+    <title>Code coverage report for models/admin.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">server_ecommerce</a> app.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">models</a> admin.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">96.61% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>45/45</span>
+                <span class='fraction'>57/59</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">96.61% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>45/45</span>
+                <span class='fraction'>57/59</span>
             </div>
         
             
@@ -108,7 +108,20 @@
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -153,59 +166,85 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">require("dotenv").config();
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
-var cors = require("cors");
-const passport = require("passport");
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
 &nbsp;
-const hashPassword = require("./utils/hashPassword");
-require("./middleware/passport");
+const hashPassword = require("../utils/hashPassword");
 &nbsp;
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
-const adminRouter = require("./routes/admin");
-const categoriesRouter = require("./routes/categories");
-const cartsRouter = require("./routes/carts");
-const cartDetailsRouter = require("./routes/cartDetails");
-const ordersRouter = require("./routes/orders");
-&nbsp;
-const productsRouter = require("./routes/product");
-const app = express();
-app.use(
-	cors({
-		origin: process.env.CORS_ORIGIN,
-		credentials: true,
-	})
-);
-app.set("trust proxy", 1);
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser(hashPassword(process.env.COOKIE_KEY)));
-app.use(express.static(path.join(__dirname, "public")));
-app.use(passport.initialize());
-&nbsp;
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/admin", adminRouter);
-app.use("/categories", categoriesRouter);
-app.use("/carts", cartsRouter);
-app.use("/cartDetails", cartDetailsRouter);
-app.use("/orders", ordersRouter);
-app.use("/product", productsRouter);
-&nbsp;
-module.exports = app;
-&nbsp;</pre></td></tr></table></pre>
+const {
+	Model
+} = require("sequelize");
+module.exports = (sequelize, DataTypes) =&gt; {
+	class Admin extends Model {
+		/**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+		static associate(models) {
+			// define association here
+		}
+	}
+	Admin.init({
+		name: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				isAlpha: true,
+				notNull: true,
+				notEmpty: true,
+				len: [3, 255]
+			}
+		},
+		email: {
+			type: DataTypes.STRING,
+			unique: true,
+			allowNull: false,
+			validate: {
+				isEmail: true,
+				notNull: true,
+				notEmpty: true
+			}
+		},
+		password: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				isAlphanumeric: true,
+				notNull: true,
+				notEmpty: true,
+				len: [6, 20]
+			},
+<span class="fstat-no" title="function not covered" >			set(value) {</span>
+<span class="cstat-no" title="statement not covered" >				this.setDataValue("password", hashPassword(value));</span>
+<span class="cstat-no" title="statement not covered" >			}</span>
+		}
+	}, {
+		sequelize,
+		modelName: "Admin",
+		paranoid: true
+	});
+	return Admin;
+};</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-02T01:41:40.893Z
+                at 2022-11-02T04:36:29.852Z
             </div>
         <script src="../prettify.js"></script>
         <script>

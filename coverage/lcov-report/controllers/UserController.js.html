@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for server_ecommerce/controllers/OrderController.js</title>
+    <title>Code coverage report for controllers/UserController.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">server_ecommerce/controllers</a> OrderController.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">controllers</a> UserController.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.09% </span>
+                <span class="strong">53.58% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>28/174</span>
+                <span class='fraction'>112/209</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">58.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>7/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.09% </span>
+                <span class="strong">53.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>28/174</span>
+                <span class='fraction'>112/209</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -237,123 +237,114 @@
 <a name='L172'></a><a href='#L172'>172</a>
 <a name='L173'></a><a href='#L173'>173</a>
 <a name='L174'></a><a href='#L174'>174</a>
-<a name='L175'></a><a href='#L175'>175</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -369,18 +360,92 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -401,189 +466,229 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Sequelize = require("sequelize");
-const Model = require("../models");
-const { Order, Cart, OrderDetail, Product } = Model;
-const env = process.env.NODE_ENV<span class="branch-0 cbranch-no" title="branch not covered" > || "development";</span>
-const config = require(__dirname + "/../config/config.js")[env];
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const { User } = require("../models");
+const db = require("../models/index");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 &nbsp;
-let sequelize;
-if (config.use_env_variable) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >	sequelize = new Sequelize(process.env[config.use_env_variable], config);</span>
-} else {
-	sequelize = new Sequelize(
-		config.database,
-		config.username,
-		config.password,
-		config
-	);
-}
+const getUserById = async (req, res) =&gt; {
+	try {
+		const user = req.user;
+		res.status(200).json({
+			message: "Successfully get detail a user",
+			user,
+		});
+	} catch (error) {
+		res.status(400).json({
+			message: error.message,
+		});
+	}
+};
 &nbsp;
-const createOrder = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
+const login = async (req, res) =&gt; {
+	try {
+		const { email, password } = req.body;
+		const cekUser = await User.findOne({
+			where: {
+				email: email,
+			},
+		})<span class="branch-0 cbranch-no" title="branch not covered" >;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		if (!cekUser) {</span>
+<span class="cstat-no" title="statement not covered" >			return res.status(401).json({</span>
+<span class="cstat-no" title="statement not covered" >				message: "Wrong email or password",</span>
+<span class="cstat-no" title="statement not covered" >			});</span>
+<span class="cstat-no" title="statement not covered" >		}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		const cekPass = await bcrypt.compare(password, cekUser.password);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		if (!cekPass) {</span>
+<span class="cstat-no" title="statement not covered" >			return res.status(401).json({</span>
+<span class="cstat-no" title="statement not covered" >				message: "Wrong email or password",</span>
+<span class="cstat-no" title="statement not covered" >			});</span>
+<span class="cstat-no" title="statement not covered" >		}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		const payload = {</span>
+<span class="cstat-no" title="statement not covered" >			id: cekUser.email,</span>
+<span class="cstat-no" title="statement not covered" >		};</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		const secret = process.env.KEY;</span>
+<span class="cstat-no" title="statement not covered" >		const token = jwt.sign(payload, secret, { expiresIn: "1 hour" });</span>
+<span class="cstat-no" title="statement not covered" >		return await res.status(200).json({</span>
+<span class="cstat-no" title="statement not covered" >			message: "Login successful",</span>
+<span class="cstat-no" title="statement not covered" >			token,</span>
+<span class="cstat-no" title="statement not covered" >		});</span>
+	} catch (error) {
+		return await res.status(500).json({
+			message: "error while authenticating user " + error.message,
+		});
+	}
+};
+&nbsp;
+const verifyJwt = (req, res) =&gt; {
+	const token = req.headers.authorization;
+	jwt.verify(token, process.env.KEY, (err, result) =&gt; {
+		if (err) {
+			res.status(403).json({
+				message: "unauthorized",
+			});
+		}<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
+<span class="cstat-no" title="statement not covered" >			res.status(200).json({</span>
+<span class="cstat-no" title="statement not covered" >				message: "authorized",</span>
+<span class="cstat-no" title="statement not covered" >			});</span>
+<span class="cstat-no" title="statement not covered" >		}</span>
+	});
+};
+&nbsp;
+const logout = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >	try {</span>
-<span class="cstat-no" title="statement not covered" >		const cart = await Cart.findOne({</span>
-<span class="cstat-no" title="statement not covered" >			where: {</span>
-<span class="cstat-no" title="statement not covered" >				UserId: req.user.id,</span>
-<span class="cstat-no" title="statement not covered" >				isBought: false</span>
-<span class="cstat-no" title="statement not covered" >			}</span>
+<span class="cstat-no" title="statement not covered" >		// localStorage.setItem("token", "");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		return await res.status(200).send({</span>
+<span class="cstat-no" title="statement not covered" >			message: "Successfully logged out",</span>
+<span class="cstat-no" title="statement not covered" >		});</span>
+<span class="cstat-no" title="statement not covered" >	} catch (error) {</span>
+<span class="cstat-no" title="statement not covered" >		console.log("error logout : ", error);</span>
+<span class="cstat-no" title="statement not covered" >		return await res.status(500).json({</span>
+<span class="cstat-no" title="statement not covered" >			message: "error while logout",</span>
+<span class="cstat-no" title="statement not covered" >		});</span>
+<span class="cstat-no" title="statement not covered" >	}</span>
+<span class="cstat-no" title="statement not covered" >};</span>
+&nbsp;
+const createUser = async (req, res) =&gt; {
+	try {
+		const { nama, password, email } = req.body;
+&nbsp;
+		const cekEmail = await User.findOne({
+			where: {
+				email: email,
+			},
+		})<span class="branch-0 cbranch-no" title="branch not covered" >;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		if (cekEmail) {</span>
+<span class="cstat-no" title="statement not covered" >			return res.status(409).json({</span>
+<span class="cstat-no" title="statement not covered" >				message: "Email already exist, Please use another email address",</span>
+<span class="cstat-no" title="statement not covered" >			});</span>
+<span class="cstat-no" title="statement not covered" >		}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		await User.create({</span>
+<span class="cstat-no" title="statement not covered" >			name: nama,</span>
+<span class="cstat-no" title="statement not covered" >			password: password,</span>
+<span class="cstat-no" title="statement not covered" >			email: email,</span>
 <span class="cstat-no" title="statement not covered" >		});</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >		if (cart) {</span>
-<span class="cstat-no" title="statement not covered" >			const [order, created] = await Order.findOrCreate({</span>
-<span class="cstat-no" title="statement not covered" >				where: {</span>
-<span class="cstat-no" title="statement not covered" >					CartId: cart.id</span>
+<span class="cstat-no" title="statement not covered" >		return res.status(200).json({</span>
+<span class="cstat-no" title="statement not covered" >			message: "Successfully create user",</span>
+<span class="cstat-no" title="statement not covered" >		});</span>
+	} catch (error) {
+		res.status(500).json({
+			message: "error creating user",
+		});
+	}
+};
+&nbsp;
+const getBadgeByUser = async (req, res) =&gt; {
+	const UserId = req.user.id;
+	try {
+		const [results, metadata] = await db.sequelize
+			.query(`SELECT "Cart"."UserId" AS "userId", sum("totalOrder") AS "totalShop"
+    FROM "Orders" AS "Order"
+    JOIN "Carts" AS "Cart" ON "Order"."CartId" = "Cart"."id" AND "Cart"."UserId" = ${UserId}
+    GROUP BY "Cart"."UserId";`)<span class="branch-0 cbranch-no" title="branch not covered" >;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		let val = await results[0].totalShop;</span>
+<span class="cstat-no" title="statement not covered" >		let badge = "Basic";</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		if (val &gt; 100000000) {</span>
+<span class="cstat-no" title="statement not covered" >			badge = "Ruby Diamond";</span>
+<span class="cstat-no" title="statement not covered" >		} else if (val &gt; 10000000) {</span>
+<span class="cstat-no" title="statement not covered" >			badge = "Diamond";</span>
+<span class="cstat-no" title="statement not covered" >		} else if (val &gt; 1000000) {</span>
+<span class="cstat-no" title="statement not covered" >			badge = "Gold";</span>
+<span class="cstat-no" title="statement not covered" >		} else if (val &gt; 100000) {</span>
+<span class="cstat-no" title="statement not covered" >			badge = "Silver";</span>
+<span class="cstat-no" title="statement not covered" >		}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		res.status(200).json({</span>
+<span class="cstat-no" title="statement not covered" >			message: "Successfully get detail a badge this user",</span>
+<span class="cstat-no" title="statement not covered" >			results,</span>
+<span class="cstat-no" title="statement not covered" >			badge,</span>
+<span class="cstat-no" title="statement not covered" >		});</span>
+	} catch (error) {
+		console.log(error.message);
+		res.status(500).json({
+			message: error.message,
+			results: [
+				{
+					UserId,
+					totalShop: 0,
+				},
+			],
+			badge: "Basic",
+		});
+	}
+};
+&nbsp;
+const editUser = async (req, res) =&gt; {
+	try {
+		const id = req.user.id;
+		const { name, address, phoneNumber, twitter, instagram, facebook } =
+      req.body;
+		const options = {
+			where: {
+				id,
+			},
+		};
+		let user = await User.findOne(options)<span class="branch-0 cbranch-no" title="branch not covered" >;</span>
+<span class="cstat-no" title="statement not covered" >		if (user) {</span>
+<span class="cstat-no" title="statement not covered" >			await User.update(</span>
+<span class="cstat-no" title="statement not covered" >				{</span>
+<span class="cstat-no" title="statement not covered" >					name,</span>
+<span class="cstat-no" title="statement not covered" >					address,</span>
+<span class="cstat-no" title="statement not covered" >					phoneNumber,</span>
+<span class="cstat-no" title="statement not covered" >					twitter,</span>
+<span class="cstat-no" title="statement not covered" >					instagram,</span>
+<span class="cstat-no" title="statement not covered" >					facebook,</span>
 <span class="cstat-no" title="statement not covered" >				},</span>
-<span class="cstat-no" title="statement not covered" >				defaults: {</span>
-<span class="cstat-no" title="statement not covered" >					totalOrder: req.body.totalOrder</span>
-<span class="cstat-no" title="statement not covered" >				}</span>
-<span class="cstat-no" title="statement not covered" >			});</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >			const result = await sequelize.transaction(async (t) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >				const [results, metadata] = await sequelize.query(</span>
-<span class="cstat-no" title="statement not covered" >					`INSERT INTO "OrderDetails" ("OrderId", "ProductId", "qty", "price", "totalOrderDetail", "createdAt", "updatedAt") </span>
-<span class="cstat-no" title="statement not covered" >                    SELECT ${order.id}, "ProductId", "qty", "price", "qty"*"price",CURRENT_TIMESTAMP, CURRENT_TIMESTAMP FROM "CartDetails" </span>
-<span class="cstat-no" title="statement not covered" >                    JOIN "Products" ON "CartDetails"."ProductId" = "Products"."id" </span>
-<span class="cstat-no" title="statement not covered" >                    WHERE "CartId" = ${cart.id}`</span>
-<span class="cstat-no" title="statement not covered" >				);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >				await Cart.update({</span>
-<span class="cstat-no" title="statement not covered" >					isBought: true</span>
-<span class="cstat-no" title="statement not covered" >				}, {</span>
-<span class="cstat-no" title="statement not covered" >					where: {</span>
-<span class="cstat-no" title="statement not covered" >						id: cart.id</span>
-<span class="cstat-no" title="statement not covered" >					}</span>
-<span class="cstat-no" title="statement not covered" >				});</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >				return order;</span>
-<span class="cstat-no" title="statement not covered" >			});</span>
-<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >				options</span>
+<span class="cstat-no" title="statement not covered" >			);</span>
 <span class="cstat-no" title="statement not covered" >			res.status(200).json({</span>
-<span class="cstat-no" title="statement not covered" >				message: "Create Order Success",</span>
-<span class="cstat-no" title="statement not covered" >				data: result</span>
+<span class="cstat-no" title="statement not covered" >				message: "The user has been successfully updated",</span>
 <span class="cstat-no" title="statement not covered" >			});</span>
 <span class="cstat-no" title="statement not covered" >		} else {</span>
 <span class="cstat-no" title="statement not covered" >			res.status(400).json({</span>
-<span class="cstat-no" title="statement not covered" >				message: "Cart empty"</span>
+<span class="cstat-no" title="statement not covered" >				message: "The user is not found!",</span>
 <span class="cstat-no" title="statement not covered" >			});</span>
 <span class="cstat-no" title="statement not covered" >		}</span>
-<span class="cstat-no" title="statement not covered" >	} catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >		res.status(400).json({</span>
-<span class="cstat-no" title="statement not covered" >			message: error.message</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" >	}</span>
-<span class="cstat-no" title="statement not covered" >};</span>
-&nbsp;
-const updateOrderStatus = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >	try {</span>
-<span class="cstat-no" title="statement not covered" >		const order = await Order.findOne({</span>
-<span class="cstat-no" title="statement not covered" >			where: {</span>
-<span class="cstat-no" title="statement not covered" >				id: req.params.id,</span>
-<span class="cstat-no" title="statement not covered" >				status: "waiting payment"</span>
-<span class="cstat-no" title="statement not covered" >			},</span>
-<span class="cstat-no" title="statement not covered" >			include: [{</span>
-<span class="cstat-no" title="statement not covered" >				model: Cart,</span>
-<span class="cstat-no" title="statement not covered" >				where: {</span>
-<span class="cstat-no" title="statement not covered" >					UserId: req.user.id,</span>
-<span class="cstat-no" title="statement not covered" >				}</span>
-<span class="cstat-no" title="statement not covered" >			}]</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >		if (order) {</span>
-<span class="cstat-no" title="statement not covered" >			if (req.body.status === "done" | req.body.status === "cancelled") {</span>
-<span class="cstat-no" title="statement not covered" >				await Order.update({</span>
-<span class="cstat-no" title="statement not covered" >					status: req.body.status</span>
-<span class="cstat-no" title="statement not covered" >				}, {</span>
-<span class="cstat-no" title="statement not covered" >					where: {</span>
-<span class="cstat-no" title="statement not covered" >						id: req.params.id</span>
-<span class="cstat-no" title="statement not covered" >					}</span>
-<span class="cstat-no" title="statement not covered" >				});</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >				res.status(200).json({</span>
-<span class="cstat-no" title="statement not covered" >					message: "Update order success"</span>
-<span class="cstat-no" title="statement not covered" >				});</span>
-<span class="cstat-no" title="statement not covered" >			} else {</span>
-<span class="cstat-no" title="statement not covered" >				res.status(400).json({</span>
-<span class="cstat-no" title="statement not covered" >					message: "Order status not valid"</span>
-<span class="cstat-no" title="statement not covered" >				});</span>
-<span class="cstat-no" title="statement not covered" >			}</span>
-<span class="cstat-no" title="statement not covered" >		} else {</span>
-<span class="cstat-no" title="statement not covered" >			res.status(404).json({</span>
-<span class="cstat-no" title="statement not covered" >				message: "Order not found"</span>
-<span class="cstat-no" title="statement not covered" >			});</span>
-<span class="cstat-no" title="statement not covered" >		}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >	} catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >		res.status(400).json({</span>
-<span class="cstat-no" title="statement not covered" >			message: error.message</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" >	}</span>
-<span class="cstat-no" title="statement not covered" >};</span>
-&nbsp;
-const getOrders = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >	try {</span>
-<span class="cstat-no" title="statement not covered" >		const orders = await Order.findAll({</span>
-<span class="cstat-no" title="statement not covered" >			include: [{</span>
-<span class="cstat-no" title="statement not covered" >				model: Cart,</span>
-<span class="cstat-no" title="statement not covered" >				where: {</span>
-<span class="cstat-no" title="statement not covered" >					UserId: req.user.id,</span>
-<span class="cstat-no" title="statement not covered" >				}</span>
-<span class="cstat-no" title="statement not covered" >			}, {</span>
-<span class="cstat-no" title="statement not covered" >				model: OrderDetail,</span>
-<span class="cstat-no" title="statement not covered" >				include: Product</span>
-<span class="cstat-no" title="statement not covered" >			}]</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >		res.status(200).json({</span>
-<span class="cstat-no" title="statement not covered" >			message: "Get Orders Success",</span>
-<span class="cstat-no" title="statement not covered" >			data: orders</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" >	} catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >		res.status(400).json({</span>
-<span class="cstat-no" title="statement not covered" >			message: error.message</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" >	}</span>
-<span class="cstat-no" title="statement not covered" >};</span>
-&nbsp;
-const getOrder = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >	try {</span>
-<span class="cstat-no" title="statement not covered" >		const order = await Order.findOne({</span>
-<span class="cstat-no" title="statement not covered" >			where: {</span>
-<span class="cstat-no" title="statement not covered" >				id: req.params.id</span>
-<span class="cstat-no" title="statement not covered" >			},</span>
-<span class="cstat-no" title="statement not covered" >			include: [{</span>
-<span class="cstat-no" title="statement not covered" >				model: Cart,</span>
-<span class="cstat-no" title="statement not covered" >				where: {</span>
-<span class="cstat-no" title="statement not covered" >					UserId: req.user.id,</span>
-<span class="cstat-no" title="statement not covered" >				}</span>
-<span class="cstat-no" title="statement not covered" >			}, {</span>
-<span class="cstat-no" title="statement not covered" >				model: OrderDetail,</span>
-<span class="cstat-no" title="statement not covered" >				include: Product</span>
-<span class="cstat-no" title="statement not covered" >			}]</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >		res.status(200).json({</span>
-<span class="cstat-no" title="statement not covered" >			message: "Get Order Success",</span>
-<span class="cstat-no" title="statement not covered" >			data: order</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" >	} catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >		res.status(400).json({</span>
-<span class="cstat-no" title="statement not covered" >			message: error.message</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" >	}</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+	} catch (error) {
+		res.status(500).json({
+			message: error.message,
+		});
+	}
+};
 &nbsp;
 module.exports = {
-	createOrder, updateOrderStatus, getOrder, getOrders
+	login,
+	verifyJwt,
+	createUser,
+	getUserById,
+	getBadgeByUser,
+	editUser,
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -592,16 +697,16 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-02T01:41:40.893Z
+                at 2022-11-02T04:36:29.852Z
             </div>
-        <script src="../../prettify.js"></script>
+        <script src="../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../sorter.js"></script>
-        <script src="../../block-navigation.js"></script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
     </body>
 </html>
     

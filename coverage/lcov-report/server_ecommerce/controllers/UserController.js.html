@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.91% </span>
+                <span class="strong">19.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>27/209</span>
+                <span class='fraction'>40/209</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>1/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.91% </span>
+                <span class="strong">19.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>27/209</span>
+                <span class='fraction'>40/209</span>
             </div>
         
             
@@ -292,6 +292,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -317,19 +324,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -500,14 +500,14 @@ const getUserById = <span class="fstat-no" title="function not covered" >async (
 <span class="cstat-no" title="statement not covered" >	}</span>
 <span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;
-const login = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >	try {</span>
-<span class="cstat-no" title="statement not covered" >		const { email, password } = req.body;</span>
-<span class="cstat-no" title="statement not covered" >		const cekUser = await User.findOne({</span>
-<span class="cstat-no" title="statement not covered" >			where: {</span>
-<span class="cstat-no" title="statement not covered" >				email: email,</span>
-<span class="cstat-no" title="statement not covered" >			},</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
+const login = async (req, res) =&gt; {
+	try {
+		const { email, password } = req.body;
+		const cekUser = await User.findOne({
+			where: {
+				email: email,
+			},
+		})<span class="branch-0 cbranch-no" title="branch not covered" >;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >		if (!cekUser) {</span>
 <span class="cstat-no" title="statement not covered" >			return res.status(401).json({</span>
@@ -533,12 +533,12 @@ const login = <span class="fstat-no" title="function not covered" >async (req, r
 <span class="cstat-no" title="statement not covered" >			message: "Login successful",</span>
 <span class="cstat-no" title="statement not covered" >			token,</span>
 <span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" >	} catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >		return await res.status(500).json({</span>
-<span class="cstat-no" title="statement not covered" >			message: "error while authenticating user " + error.message,</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" >	}</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+	} catch (error) {
+		return await res.status(500).json({
+			message: "error while authenticating user " + error.message,
+		});
+	}
+};
 &nbsp;
 const verifyJwt = <span class="fstat-no" title="function not covered" >(req, res) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >	const token = req.headers.authorization;</span>
@@ -697,7 +697,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-01T14:59:11.868Z
+                at 2022-11-02T01:41:40.893Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
