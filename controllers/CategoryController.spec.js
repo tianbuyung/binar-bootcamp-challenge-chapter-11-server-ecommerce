@@ -15,7 +15,6 @@ describe("GET ALL CATEGORIES /categories", () => {
 			.then((res) => {
 				expect(res.statusCode).toBe(200);
 				expect(res.body).toHaveProperty("categories");
-				expect(res.body.categories).contains("name");
 				expect(res.body).toHaveProperty("message");
 				done();
 			});
