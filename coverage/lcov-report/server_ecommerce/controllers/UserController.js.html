@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.66% </span>
+                <span class="strong">12.79% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>39/209</span>
+                <span class='fraction'>27/211</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.66% </span>
+                <span class="strong">12.79% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>39/209</span>
+                <span class='fraction'>27/211</span>
             </div>
         
             
@@ -272,26 +272,30 @@
 <a name='L207'></a><a href='#L207'>207</a>
 <a name='L208'></a><a href='#L208'>208</a>
 <a name='L209'></a><a href='#L209'>209</a>
-<a name='L210'></a><a href='#L210'>210</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -486,29 +490,31 @@ const db = require("../models/index");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 &nbsp;
-const getUserById = async (req, res) =&gt; {
-	try {
-		const user = req.user;
-		res.status(200).json({
-			message: "Successfully get detail a user",
-			user,
-		});
-	} catch (error) {
-		res.status(400).json({
-			message: error.message,
-		});
-	}
-};
+const getUserById = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >	try {</span>
+<span class="cstat-no" title="statement not covered" >		const user = req.user;</span>
+<span class="cstat-no" title="statement not covered" >		res.status(200).json({</span>
+<span class="cstat-no" title="statement not covered" >			message: "Successfully get detail a user",</span>
+<span class="cstat-no" title="statement not covered" >			user,</span>
+<span class="cstat-no" title="statement not covered" >		});</span>
+<span class="cstat-no" title="statement not covered" >	} catch (error) {</span>
+<span class="cstat-no" title="statement not covered" >		res.status(400).json({</span>
+<span class="cstat-no" title="statement not covered" >			message: error.message,</span>
+<span class="cstat-no" title="statement not covered" >		});</span>
+<span class="cstat-no" title="statement not covered" >	}</span>
+<span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;
 const login = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >	try {</span>
 <span class="cstat-no" title="statement not covered" >		const { email, password } = req.body;</span>
+<span class="cstat-no" title="statement not covered" >		// check is user is found in database</span>
 <span class="cstat-no" title="statement not covered" >		const cekUser = await User.findOne({</span>
 <span class="cstat-no" title="statement not covered" >			where: {</span>
 <span class="cstat-no" title="statement not covered" >				email: email,</span>
 <span class="cstat-no" title="statement not covered" >			},</span>
 <span class="cstat-no" title="statement not covered" >		});</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >		// if user not found in database, send error user not found</span>
 <span class="cstat-no" title="statement not covered" >		if (!cekUser) {</span>
 <span class="cstat-no" title="statement not covered" >			return res.status(401).json({</span>
 <span class="cstat-no" title="statement not covered" >				message: "Wrong email or password",</span>
@@ -697,7 +703,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-02T09:18:58.957Z
+                at 2022-11-02T13:39:43.373Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

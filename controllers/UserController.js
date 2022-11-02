@@ -20,12 +20,14 @@ const getUserById = async (req, res) => {
 const login = async (req, res) => {
 	try {
 		const { email, password } = req.body;
+		// check is user is found in database
 		const cekUser = await User.findOne({
 			where: {
 				email: email,
 			},
 		});
 
+		// if user not found in database, send error user not found
 		if (!cekUser) {
 			return res.status(401).json({
 				message: "Wrong email or password",

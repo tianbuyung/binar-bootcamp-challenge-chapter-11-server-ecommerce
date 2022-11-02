@@ -11,7 +11,8 @@ const getCategories = async (req, res) => {
 			],
 		};
 		const categories = await Category.findAll(options);
-		res.status(200).json({
+		// const categories = await Category.findAll();
+		return res.status(200).json({
 			message: "Successfully get all categories",
 			categories,
 		});
@@ -25,10 +26,8 @@ const getCategories = async (req, res) => {
 const getCategoryProduct = async (req, res) => {
 	try {
 		const { id } = req.params;
-		if (!id) {
-			return res.status(404).json({
-				message: "id not being provided",
-			});
+		if (isNaN(id)) {
+			throw { message: "id seems not valid" };
 		}
 		const { query } = req;
 		const page = query?.page || 1;
@@ -39,15 +38,13 @@ const getCategoryProduct = async (req, res) => {
 			limit: size,
 			include: Category,
 			where: {
-				CategoryId: id
-			}
+				CategoryId: id,
+			},
 		});
-		if (!result) {
-			if (!id) {
-				return res.status(404).json({
-					message: "not found",
-				});
-			}
+		if (!result?.count) {
+			return res.status(404).json({
+				message: "not found",
+			});
 		}
 		return res.status(200).json({
 			data: { totalPage: Math.ceil(result.count / size), ...result },
