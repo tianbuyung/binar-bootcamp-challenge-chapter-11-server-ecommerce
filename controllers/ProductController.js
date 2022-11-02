@@ -167,16 +167,16 @@ const getDetailProductUser = async (req, res) => {
 		};
 		const product = await Product.findOne(options);
 		if (!product) {
-			res.status(400).json({
+			return res.status(400).json({
 				message: "Product not Found",
 			});
 		}
-		res.status(200).json({
+		return res.status(200).json({
 			message: "Successfully get detail a product",
 			product,
 		});
 	} catch (error) {
-		res.status(400).json({
+		return res.status(400).json({
 			message: error.message,
 		});
 	}

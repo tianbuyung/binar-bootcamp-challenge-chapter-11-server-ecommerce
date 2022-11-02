@@ -15,12 +15,12 @@ describe("GET ALL CATEGORIES /categories", () => {
 			.then((res) => {
 				expect(res.statusCode).toBe(200);
 				expect(res.body).toHaveProperty("categories");
-				expect(res.body.categories).contains("name");
 				expect(res.body).toHaveProperty("message");
 				done();
 			});
 	});
 });
+
 describe("GET CATEGORY BY ID /categories/:id", () => {
 	test(`Return status 200 and json of categegory`, (done) => {
 		request(app)
