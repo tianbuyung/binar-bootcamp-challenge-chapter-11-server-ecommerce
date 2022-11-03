@@ -47,7 +47,7 @@ const login = async (req, res) => {
 		};
 
 		const secret = process.env.KEY;
-		const token = jwt.sign(payload, secret, { expiresIn: "1 hour" });
+		const token = jwt.sign(payload, secret, { expiresIn: "1 month" });
 		return await res.status(200).json({
 			message: "Login successful",
 			token,
@@ -126,6 +126,8 @@ const getBadgeByUser = async (req, res) => {
 			badge = "Gold";
 		} else if (val > 100000) {
 			badge = "Silver";
+		} else {
+			badge = "Basic";
 		}
 
 		res.status(200).json({
@@ -152,7 +154,7 @@ const editUser = async (req, res) => {
 	try {
 		const id = req.user.id;
 		const { name, address, phoneNumber, twitter, instagram, facebook } =
-      req.body;
+	req.body;
 		const options = {
 			where: {
 				id,
@@ -175,7 +177,7 @@ const editUser = async (req, res) => {
 				message: "The user has been successfully updated",
 			});
 		} else {
-			res.status(400).json({
+			res.status(404).json({
 				message: "The user is not found!",
 			});
 		}

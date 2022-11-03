@@ -3,7 +3,7 @@
 const request = require("supertest");
 const app = require("../app");
 
-describe("GET DETAIL PRODUCT /product/id", () => {
+describe("ProductController", () => {
 	test(`Product not found`, (done) => {
 		request(app)
 			.get("/product/100")
@@ -34,6 +34,16 @@ describe("GET DETAIL PRODUCT /product/id", () => {
 				done();
 			});
 	});
+
+	test(`get popular product`, (done) => {
+		request(app)
+			.get("/product/popular")
+			.then((res) => {
+				expect(res.statusCode).toBe(200);
+				expect(res.body).toHaveProperty("message");
+				done();
+			});
+	});
 });
 
 describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
@@ -49,7 +59,7 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 	test("get all products", (done) => {
 		request(app)
 		.get("/admin/products")
-		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDcyNDAwLCJleHAiOjE2Njc0NzYwMDB9.Ws1IyPHOkjfCSTDVzhcynvxnwcvDlmm0Uze2IoO3_Zw" })
+		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDg1MTYyLCJleHAiOjE2Njc0ODg3NjJ9.vce0qtiFnwEIVxN15EZkdtBJeHYGNzHbFTqD-wIcJxg" })
 			.then((res) => {
 				expect(res.statusCode).toBe(200);
 				expect(res.body).toHaveProperty("message");
@@ -63,7 +73,7 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 	test("get product detail", (done) => {
 		request(app)
 		.get("/admin/products/1")
-		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDcyNDAwLCJleHAiOjE2Njc0NzYwMDB9.Ws1IyPHOkjfCSTDVzhcynvxnwcvDlmm0Uze2IoO3_Zw" })
+		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDg1MTYyLCJleHAiOjE2Njc0ODg3NjJ9.vce0qtiFnwEIVxN15EZkdtBJeHYGNzHbFTqD-wIcJxg" })
 			.then((res) => {
 				expect(res.statusCode).toBe(200);
 				expect(res.body).toHaveProperty("message");
@@ -75,11 +85,11 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 	test("create product", (done) => {
 		request(app)
 		.post("/admin/products")
-			.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDcyNDAwLCJleHAiOjE2Njc0NzYwMDB9.Ws1IyPHOkjfCSTDVzhcynvxnwcvDlmm0Uze2IoO3_Zw" })
+			.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDg1MTYyLCJleHAiOjE2Njc0ODg3NjJ9.vce0qtiFnwEIVxN15EZkdtBJeHYGNzHbFTqD-wIcJxg" })
 			.send({
 				"price": 3000,
-				"name": "test tambah1",
-				"CategoryId": 2,
+				"name": "tambah barang 2",
+				"CategoryId": 1,
 				"imageUrl" : "",
 			})
 			.then((res) => {
@@ -92,8 +102,8 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 
 	test("delete product by id", (done) => {
 		request(app)
-		.delete("/admin/products/21")
-		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDcyNDAwLCJleHAiOjE2Njc0NzYwMDB9.Ws1IyPHOkjfCSTDVzhcynvxnwcvDlmm0Uze2IoO3_Zw" })
+		.delete("/admin/products/19")
+		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDg1MTYyLCJleHAiOjE2Njc0ODg3NjJ9.vce0qtiFnwEIVxN15EZkdtBJeHYGNzHbFTqD-wIcJxg" })
 			.then((res) => {
 				expect(res.statusCode).toBe(200);
 				expect(res.body).toHaveProperty("message");
@@ -104,7 +114,7 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 	test("edit product", (done) => {
 		request(app)
 		.put("/admin/products/10")
-			.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDcyNDAwLCJleHAiOjE2Njc0NzYwMDB9.Ws1IyPHOkjfCSTDVzhcynvxnwcvDlmm0Uze2IoO3_Zw" })
+			.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDg1MTYyLCJleHAiOjE2Njc0ODg3NjJ9.vce0qtiFnwEIVxN15EZkdtBJeHYGNzHbFTqD-wIcJxg" })
 			.send({
 				"price": 3000,
 				"name": "test ubah",
