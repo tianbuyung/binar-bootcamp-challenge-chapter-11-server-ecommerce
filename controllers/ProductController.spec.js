@@ -39,7 +39,7 @@ describe("GET DETAIL PRODUCT /product/id", () => {
 describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 	test(`unauthorized`, (done) => {
 		request(app)
-			.get("/admin")
+			.get("/admin/products")
 			.then((res) => {
 				expect(res.statusCode).toBe(401);
 				done();
@@ -49,7 +49,7 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 	test("get all products", (done) => {
 		request(app)
 		.get("/admin/products")
-		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvdWdsYXM2MEBob3RtYWlsLmNvbSIsImlhdCI6MTY2NzQ1NTQyNCwiZXhwIjoxNjY3NDU5MDI0fQ.IRU3bCUEfsYSPGwhUBpKI0IFQfQoWqI6p6JrlMXU-xU" })
+		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDcyNDAwLCJleHAiOjE2Njc0NzYwMDB9.Ws1IyPHOkjfCSTDVzhcynvxnwcvDlmm0Uze2IoO3_Zw" })
 			.then((res) => {
 				expect(res.statusCode).toBe(200);
 				expect(res.body).toHaveProperty("message");
@@ -63,11 +63,29 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 	test("get product detail", (done) => {
 		request(app)
 		.get("/admin/products/1")
-		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvdWdsYXM2MEBob3RtYWlsLmNvbSIsImlhdCI6MTY2NzQ1NTQyNCwiZXhwIjoxNjY3NDU5MDI0fQ.IRU3bCUEfsYSPGwhUBpKI0IFQfQoWqI6p6JrlMXU-xU" })
+		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDcyNDAwLCJleHAiOjE2Njc0NzYwMDB9.Ws1IyPHOkjfCSTDVzhcynvxnwcvDlmm0Uze2IoO3_Zw" })
 			.then((res) => {
 				expect(res.statusCode).toBe(200);
 				expect(res.body).toHaveProperty("message");
-				expect(res.body).toHaveProperty("products");
+				expect(res.body).toHaveProperty("product");
+				done();
+			});
+	});
+
+	test("create product", (done) => {
+		request(app)
+		.post("/admin/products")
+			.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDcyNDAwLCJleHAiOjE2Njc0NzYwMDB9.Ws1IyPHOkjfCSTDVzhcynvxnwcvDlmm0Uze2IoO3_Zw" })
+			.send({
+				"price": 3000,
+				"name": "test tambah1",
+				"CategoryId": 2,
+				"imageUrl" : "",
+			})
+			.then((res) => {
+				expect(res.statusCode).toBe(200);
+				expect(res.body).toHaveProperty("message");
+				expect(res.body).toHaveProperty("data");
 				done();
 			});
 	});
@@ -75,7 +93,7 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 	test("delete product by id", (done) => {
 		request(app)
 		.delete("/admin/products/21")
-		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvdWdsYXM2MEBob3RtYWlsLmNvbSIsImlhdCI6MTY2NzQ1NTQyNCwiZXhwIjoxNjY3NDU5MDI0fQ.IRU3bCUEfsYSPGwhUBpKI0IFQfQoWqI6p6JrlMXU-xU" })
+		.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDcyNDAwLCJleHAiOjE2Njc0NzYwMDB9.Ws1IyPHOkjfCSTDVzhcynvxnwcvDlmm0Uze2IoO3_Zw" })
 			.then((res) => {
 				expect(res.statusCode).toBe(200);
 				expect(res.body).toHaveProperty("message");
@@ -86,7 +104,7 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 	test("edit product", (done) => {
 		request(app)
 		.put("/admin/products/10")
-			.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvdWdsYXM2MEBob3RtYWlsLmNvbSIsImlhdCI6MTY2NzQ1NTQyNCwiZXhwIjoxNjY3NDU5MDI0fQ.IRU3bCUEfsYSPGwhUBpKI0IFQfQoWqI6p6JrlMXU-xU" })
+			.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvbm5lbGxfQm9yZXJAZ21haWwuY29tIiwiaWF0IjoxNjY3NDcyNDAwLCJleHAiOjE2Njc0NzYwMDB9.Ws1IyPHOkjfCSTDVzhcynvxnwcvDlmm0Uze2IoO3_Zw" })
 			.send({
 				"price": 3000,
 				"name": "test ubah",
@@ -96,24 +114,6 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 			.then((res) => {
 				expect(res.statusCode).toBe(200);
 				expect(res.body).toHaveProperty("message");
-				done();
-			});
-	});
-
-	test("create product", (done) => {
-		request(app)
-		.post("/admin/products")
-			.set({ 'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkRvdWdsYXM2MEBob3RtYWlsLmNvbSIsImlhdCI6MTY2NzQ1NTQyNCwiZXhwIjoxNjY3NDU5MDI0fQ.IRU3bCUEfsYSPGwhUBpKI0IFQfQoWqI6p6JrlMXU-xU" })
-			.send({
-				"price": 3000,
-				"name": "test tambah",
-				"CategoryId": 2,
-				"imageUrl" : "",
-			})
-			.then((res) => {
-				expect(res.statusCode).toBe(200);
-				expect(res.body).toHaveProperty("message");
-				expect(res.body).toHaveProperty("data");
 				done();
 			});
 	});

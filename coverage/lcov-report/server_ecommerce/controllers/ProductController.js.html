@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.55% </span>
+                <span class="strong">12.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>53/225</span>
+                <span class='fraction'>28/225</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.55% </span>
+                <span class="strong">12.44% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>53/225</span>
+                <span class='fraction'>28/225</span>
             </div>
         
             
@@ -294,36 +294,36 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -518,37 +518,37 @@
 const { Product, Category, OrderDetail } = Model;
 &nbsp;
 const sequelize = require("sequelize");
-const getProduct = async (req, res) =&gt; {
-	try {
-		const query = req.query;
-		const limit = Number(query.limit) || 10;
-		const page = Number(query.page) || 1;
-		const offset = (page - 1) * limit;
-		const options = {
-			order: ["id"],
-			limit,
-			offset,
-			include: [
-				{
-					model: Category,
-					as: "Category",
-				},
-			],
-		};
-		const products = await Product.findAndCountAll(options);
-		res.status(200).json({
-			message: "Successfully get all products",
-			currentPage: page,
-			totalPages: Math.ceil(products.count / limit),
-			products: products.rows,
-		});
-	} <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
+const getProduct = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >	try {</span>
+<span class="cstat-no" title="statement not covered" >		const query = req.query;</span>
+<span class="cstat-no" title="statement not covered" >		const limit = Number(query.limit) || 10;</span>
+<span class="cstat-no" title="statement not covered" >		const page = Number(query.page) || 1;</span>
+<span class="cstat-no" title="statement not covered" >		const offset = (page - 1) * limit;</span>
+<span class="cstat-no" title="statement not covered" >		const options = {</span>
+<span class="cstat-no" title="statement not covered" >			order: ["id"],</span>
+<span class="cstat-no" title="statement not covered" >			limit,</span>
+<span class="cstat-no" title="statement not covered" >			offset,</span>
+<span class="cstat-no" title="statement not covered" >			include: [</span>
+<span class="cstat-no" title="statement not covered" >				{</span>
+<span class="cstat-no" title="statement not covered" >					model: Category,</span>
+<span class="cstat-no" title="statement not covered" >					as: "Category",</span>
+<span class="cstat-no" title="statement not covered" >				},</span>
+<span class="cstat-no" title="statement not covered" >			],</span>
+<span class="cstat-no" title="statement not covered" >		};</span>
+<span class="cstat-no" title="statement not covered" >		const products = await Product.findAndCountAll(options);</span>
+<span class="cstat-no" title="statement not covered" >		res.status(200).json({</span>
+<span class="cstat-no" title="statement not covered" >			message: "Successfully get all products",</span>
+<span class="cstat-no" title="statement not covered" >			currentPage: page,</span>
+<span class="cstat-no" title="statement not covered" >			totalPages: Math.ceil(products.count / limit),</span>
+<span class="cstat-no" title="statement not covered" >			products: products.rows,</span>
+<span class="cstat-no" title="statement not covered" >		});</span>
+<span class="cstat-no" title="statement not covered" >	} catch (error) {</span>
 <span class="cstat-no" title="statement not covered" >		console.log("error", error);</span>
 <span class="cstat-no" title="statement not covered" >		res.status(400).json({</span>
 <span class="cstat-no" title="statement not covered" >			message: error.message,</span>
 <span class="cstat-no" title="statement not covered" >		});</span>
 <span class="cstat-no" title="statement not covered" >	}</span>
-};
+<span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;
 const getDetailProduct = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >	try {</span>
@@ -745,7 +745,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-03T06:04:20.457Z
+                at 2022-11-03T11:35:40.325Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

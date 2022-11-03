@@ -74,21 +74,6 @@ const verifyJwt = (req, res) => {
 	});
 };
 
-const logout = async (req, res) => {
-	try {
-		// localStorage.setItem("token", "");
-
-		return await res.status(200).send({
-			message: "Successfully logged out",
-		});
-	} catch (error) {
-		console.log("error logout : ", error);
-		return await res.status(500).json({
-			message: "error while logout",
-		});
-	}
-};
-
 const createUser = async (req, res) => {
 	try {
 		const { nama, password, email } = req.body;
