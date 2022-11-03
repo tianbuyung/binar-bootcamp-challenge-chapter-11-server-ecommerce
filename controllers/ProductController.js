@@ -199,16 +199,16 @@ const getProductPopular = async (req, res) => {
 		};
 		const productPopuler = await OrderDetail.findAll(options);
 		if (!productPopuler) {
-			res.status(400).json({
+			return res.status(400).json({
 				message: "Product not Found",
 			});
 		}
-		res.status(200).json({
+		return res.status(200).json({
 			message: "Successfully get detail a product",
 			productPopuler,
 		});
 	} catch (error) {
-		res.status(500).json({
+		return res.status(500).json({
 			message: error.message,
 		});
 	}
