@@ -20,6 +20,7 @@ describe("GET ALL CATEGORIES /categories", () => {
 			});
 	});
 });
+
 describe("GET CATEGORY BY ID /categories/:id", () => {
 	test(`Return status 200 and json of categegory`, (done) => {
 		request(app)
