@@ -14,4 +14,5 @@ module.exports = {
 		quotes: ["error", "double"],
 		semi: ["error", "always"],
 	},
+	ignorePatterns: "**/*.test.js"
 };
