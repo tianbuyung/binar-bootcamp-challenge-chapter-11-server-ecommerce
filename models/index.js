@@ -30,6 +30,7 @@ const sequelize = new Sequelize(
 	}
 );
 
+
 fs.readdirSync(__dirname)
 	.filter((file) => {
 		return (
