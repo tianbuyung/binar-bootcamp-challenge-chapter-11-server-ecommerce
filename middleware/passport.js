@@ -32,7 +32,6 @@ optsAdmin.jwtFromRequest = cookieExtractorAdmin;
 passport.use(
 	"user-role",
 	new JwtStrategy(opts, function (jwt_payload, done) {
-		console.log("jwt_payload", jwt_payload);
 		return User.findOne({ where: { email: jwt_payload.id } })
 			.then((user) => {
 				return done(null, user);

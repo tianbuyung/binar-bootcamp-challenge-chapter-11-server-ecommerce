@@ -20,6 +20,7 @@ describe("GET ALL CATEGORIES /categories", () => {
 			});
 	});
 });
+
 describe("GET CATEGORY BY ID /categories/:id", () => {
 	test(`Return status 200 and json of categegory`, (done) => {
 		request(app)
@@ -57,13 +58,7 @@ const mockResponse = () => {
 	res.status = jest.fn().mockReturnValue(res);
 	return res;
 };
-// const Model = require("../models");
-// const { Category } = Model;
-
-// // generate auto-mock of the module
-// jest.mock("../models");
-
-// jest.setTimeout(10000);
+;
 const mockRequest = (body = {}) => ({ body });
 const options = {
 	json: {},
