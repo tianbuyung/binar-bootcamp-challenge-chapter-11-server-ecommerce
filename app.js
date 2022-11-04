@@ -5,7 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var cors = require("cors");
 const passport = require("passport");
-// Deployment dari Circle CI aaa
+// Deployment dari Circle CI
 const hashPassword = require("./utils/hashPassword");
 require("./middleware/passport");
 
