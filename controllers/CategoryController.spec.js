@@ -15,7 +15,6 @@ describe("GET ALL CATEGORIES /categories", () => {
 			.then((res) => {
 				expect(res.statusCode).toBe(200);
 				expect(res.body).toHaveProperty("categories");
-				expect(res.body.categories).contains("name");
 				expect(res.body).toHaveProperty("message");
 				done();
 			});
@@ -58,13 +57,7 @@ const mockResponse = () => {
 	res.status = jest.fn().mockReturnValue(res);
 	return res;
 };
-// const Model = require("../models");
-// const { Category } = Model;
-
-// // generate auto-mock of the module
-// jest.mock("../models");
-
-// jest.setTimeout(10000);
+;
 const mockRequest = (body = {}) => ({ body });
 const options = {
 	json: {},

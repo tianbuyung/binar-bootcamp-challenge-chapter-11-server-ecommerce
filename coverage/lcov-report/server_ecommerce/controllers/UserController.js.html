@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.79% </span>
+                <span class="strong">23.69% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>27/211</span>
+                <span class='fraction'>50/211</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>1/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.79% </span>
+                <span class="strong">23.69% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>27/211</span>
+                <span class='fraction'>50/211</span>
             </div>
         
             
@@ -398,6 +398,33 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -410,34 +437,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -608,34 +608,34 @@ const createUser = <span class="fstat-no" title="function not covered" >async (r
 <span class="cstat-no" title="statement not covered" >	}</span>
 <span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;
-const getBadgeByUser = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >	const UserId = req.user.id;</span>
-<span class="cstat-no" title="statement not covered" >	try {</span>
-<span class="cstat-no" title="statement not covered" >		const [results, metadata] = await db.sequelize</span>
-<span class="cstat-no" title="statement not covered" >			.query(`SELECT "Cart"."UserId" AS "userId", sum("totalOrder") AS "totalShop"</span>
-<span class="cstat-no" title="statement not covered" >    FROM "Orders" AS "Order"</span>
-<span class="cstat-no" title="statement not covered" >    JOIN "Carts" AS "Cart" ON "Order"."CartId" = "Cart"."id" AND "Cart"."UserId" = ${UserId}</span>
-<span class="cstat-no" title="statement not covered" >    GROUP BY "Cart"."UserId";`);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >		let val = await results[0].totalShop;</span>
-<span class="cstat-no" title="statement not covered" >		let badge = "Basic";</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >		if (val &gt; 100000000) {</span>
+const getBadgeByUser = async (req, res) =&gt; {
+	const UserId = req.user.id;
+	try {
+		const [results, metadata] = await db.sequelize
+			.query(`SELECT "Cart"."UserId" AS "userId", sum("totalOrder") AS "totalShop"
+    FROM "Orders" AS "Order"
+    JOIN "Carts" AS "Cart" ON "Order"."CartId" = "Cart"."id" AND "Cart"."UserId" = ${UserId}
+    GROUP BY "Cart"."UserId";`);
+&nbsp;
+		let val = await results[0].totalShop;
+		let badge = "Basic";
+&nbsp;
+		if (val &gt; 100000000) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >			badge = "Ruby Diamond";</span>
-<span class="cstat-no" title="statement not covered" >		} else if (val &gt; 10000000) {</span>
-<span class="cstat-no" title="statement not covered" >			badge = "Diamond";</span>
-<span class="cstat-no" title="statement not covered" >		} else if (val &gt; 1000000) {</span>
+		} else if (val &gt; 10000000) {
+			badge = "Diamond";
+		}<span class="branch-0 cbranch-no" title="branch not covered" > else if (val &gt; 1000000) {</span>
 <span class="cstat-no" title="statement not covered" >			badge = "Gold";</span>
 <span class="cstat-no" title="statement not covered" >		} else if (val &gt; 100000) {</span>
 <span class="cstat-no" title="statement not covered" >			badge = "Silver";</span>
 <span class="cstat-no" title="statement not covered" >		}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >		res.status(200).json({</span>
-<span class="cstat-no" title="statement not covered" >			message: "Successfully get detail a badge this user",</span>
-<span class="cstat-no" title="statement not covered" >			results,</span>
-<span class="cstat-no" title="statement not covered" >			badge,</span>
-<span class="cstat-no" title="statement not covered" >		});</span>
-<span class="cstat-no" title="statement not covered" >	} catch (error) {</span>
+&nbsp;
+		res.status(200).json({
+			message: "Successfully get detail a badge this user",
+			results,
+			badge,
+		});
+	} <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
 <span class="cstat-no" title="statement not covered" >		console.log(error.message);</span>
 <span class="cstat-no" title="statement not covered" >		res.status(500).json({</span>
 <span class="cstat-no" title="statement not covered" >			message: error.message,</span>
@@ -648,7 +648,7 @@ const getBadgeByUser = <span class="fstat-no" title="function not covered" >asyn
 <span class="cstat-no" title="statement not covered" >			badge: "Basic",</span>
 <span class="cstat-no" title="statement not covered" >		});</span>
 <span class="cstat-no" title="statement not covered" >	}</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;
 const editUser = <span class="fstat-no" title="function not covered" >async (req, res) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >	try {</span>
@@ -703,7 +703,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-02T13:39:43.373Z
+                at 2022-11-02T14:24:37.343Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
