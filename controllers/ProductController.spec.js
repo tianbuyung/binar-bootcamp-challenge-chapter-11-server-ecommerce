@@ -161,7 +161,8 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 				"price": 3000,
 				"name": "tambah barang",
 				"CategoryId": 1,
-				"imageUrl" : "",
+				"imageUrl": "",
+				"videoUrl":""
 			})
 			.then((res) => {
 				expect(res.statusCode).toBe(200);
