@@ -86,6 +86,7 @@ describe("getCategory Function", () => {
 		// for the promise to be resolved with
 		data = await Category.findAll();
 	});
+
 	test("Category shown attributes", (done) => {
 		const req = mockRequest(optionsReq);
 		const res = mockResponse(options);

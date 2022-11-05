@@ -3,18 +3,15 @@ const db = require("../models/index");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const forceError = (res, message) => {
-	if (Math.floor(Math.random() * 2) === 1) {
-		return res.status(500).json({
-			message: message,
-		});
-	}
-};
-
 const getUserById = async (req, res) => {
-	if (process.env.NODE_ENV == "test") {
-		forceError(res, "error get user");
-	}
+	// if (process.env.NODE_ENV == "test") {
+	// 	let cek = Math.floor(Math.random() * 2); 
+	// 	if (cek === 1) {
+	// 		return res.status(500).json({
+	// 			message: "error while get user",
+	// 		});
+	// 	}
+	// }
 	try {
 		const user = req.user;
 		res.status(200).json({
@@ -59,11 +56,16 @@ const login = async (req, res) => {
 
 		const secret = process.env.KEY;
 
-		let token = jwt.sign(payload, secret, { expiresIn: "1 month" });
+		let token = jwt.sign(payload, secret, { expiresIn: "1 hour" });
 
 		if (process.env.NODE_ENV == "test") {
 			token = jwt.sign(payload, secret);
-			forceError(res, "error while authenticating user");
+			let cek = Math.floor(Math.random() * 2); 
+			if (cek === 1) {
+				return res.status(500).json({
+					message: "error while authenticating user",
+				});
+			}
 		}
 
 		return await res.status(200).json({
@@ -93,9 +95,15 @@ const verifyJwt = (req, res) => {
 };
 
 const createUser = async (req, res) => {
-	if (process.env.NODE_ENV == "test") {
-		forceError(res, "error creating user");
-	}
+	// if (process.env.NODE_ENV == "test") {
+	// 	let cek = Math.floor(Math.random() * 2); 
+	// 	if (cek === 1) {
+	// 		return res.status(500).json({
+	// 			message: "error creating user",
+	// 		});
+	// 	}
+	// }
+	
 	try {
 		const { nama, password, email } = req.body;
 
@@ -128,9 +136,6 @@ const createUser = async (req, res) => {
 };
 
 const getBadgeByUser = async (req, res) => {
-	if (process.env.NODE_ENV == "test") {
-		forceError(res, "error get badge");
-	}
 
 	const UserId = req.user.id;
 	try {
@@ -176,10 +181,6 @@ const getBadgeByUser = async (req, res) => {
 };
 
 const editUser = async (req, res) => {
-	if (process.env.NODE_ENV == "test") {
-		forceError(res, "error edit user");
-	}
-
 	try {
 		const id = req.user.id;
 		const { name, address, phoneNumber, twitter, instagram, facebook } =
