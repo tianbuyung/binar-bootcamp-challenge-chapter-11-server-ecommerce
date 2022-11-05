@@ -84,7 +84,7 @@ const createProduct = async (req, res) => {
 	// }
 
 	try {
-		const { name, price, CategoryId, imageUrl } = req.body;
+		const { name, price, CategoryId, imageUrl, videoUrl } = req.body;
 		const options = {
 			where: {
 				name,
@@ -93,6 +93,7 @@ const createProduct = async (req, res) => {
 				price,
 				CategoryId,
 				imageUrl,
+				videoUrl,
 			},
 		};
 		let [data, created] = await Product.findOrCreate(options);
@@ -242,7 +243,7 @@ const getProductPopular = async (req, res) => {
 				"ProductId",
 				[sequelize.fn("sum", sequelize.col("qty")), "totalQty"],
 			],
-			group: ["ProductId", "\"Product\".\"id\""],
+			group: ["ProductId", '"Product"."id"'],
 			order: [["totalQty", "DESC"]],
 			include: [
 				{

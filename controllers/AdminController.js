@@ -14,7 +14,7 @@ const loginAdmin = async (req, res) => {
 			});
 		}
 
-		const cekPassword = bcrypt.compare(password, cekUser.password);
+		const cekPassword = await bcrypt.compare(password, cekUser.password);
 
 		if (!cekPassword) {
 			return res.status(401).send({
