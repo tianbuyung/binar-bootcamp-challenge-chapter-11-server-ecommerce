@@ -60,12 +60,12 @@ const login = async (req, res) => {
 
 		if (process.env.NODE_ENV == "test") {
 			token = jwt.sign(payload, secret);
-			let cek = Math.floor(Math.random() * 2); 
-			if (cek === 1) {
-				return res.status(500).json({
-					message: "error while authenticating user",
-				});
-			}
+			// let cek = Math.floor(Math.random() * 2); 
+			// if (cek === 1) {
+			// 	return res.status(500).json({
+			// 		message: "error while authenticating user",
+			// 	});
+			// }
 		}
 
 		return await res.status(200).json({
@@ -129,8 +129,8 @@ const createUser = async (req, res) => {
 			message: "Successfully create user",
 		});
 	} catch (error) {
-		res.status(500).json({
-			message: "error creating user",
+		return res.status(500).json({
+			message: "error creating user " + error.message,
 		});
 	}
 };
@@ -156,8 +156,6 @@ const getBadgeByUser = async (req, res) => {
 			badge = "Gold";
 		} else if (val > 100000) {
 			badge = "Silver";
-		} else {
-			badge = "Basic";
 		}
 
 		res.status(200).json({
