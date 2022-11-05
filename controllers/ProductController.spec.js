@@ -1,5 +1,6 @@
 /* eslint-disable */
 /* eslint-disable no-undef */
+const ProductController = require("./ProductController");
 const request = require("supertest");
 const app = require("../app");
 
@@ -80,6 +81,11 @@ describe("PRODUCT IN ADMIN PAGE /admin/get", () => {
 				expect(res.body).toHaveProperty("product");
 				done();
 			});
+	});
+
+	let data = ""
+	before(async () => {
+		data = await ProductController.getProduct();
 	});
 
 	test("create product", (done) => {

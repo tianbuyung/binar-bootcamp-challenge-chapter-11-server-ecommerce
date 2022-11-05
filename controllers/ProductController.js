@@ -1,9 +1,20 @@
 const Model = require("../models");
-
 const { Product, Category, OrderDetail } = Model;
-
 const sequelize = require("sequelize");
+
+const forceError = (res, message) => {
+	if (Math.floor(Math.random() * 2) === 1) {
+		return res.status(500).json({
+			message: message,
+		});
+	}
+};
+
 const getProduct = async (req, res) => {
+	if (process.env.NODE_ENV == "test") {
+		forceError(res, "error get product");
+	}
+
 	try {
 		const query = req.query;
 		const limit = Number(query.limit) || 10;
@@ -29,13 +40,17 @@ const getProduct = async (req, res) => {
 		});
 	} catch (error) {
 		console.log("error", error);
-		res.status(400).json({
+		res.status(500).json({
 			message: error.message,
 		});
 	}
 };
 
 const getDetailProduct = async (req, res) => {
+	if (process.env.NODE_ENV == "test") {
+		forceError(res, "error get detail product");
+	}
+
 	try {
 		const id = req.params.id;
 		const options = {
@@ -60,6 +75,10 @@ const getDetailProduct = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
+	if (process.env.NODE_ENV == "test") {
+		forceError(res, "error create product");
+	}
+
 	try {
 		const { name, price, CategoryId, imageUrl } = req.body;
 		const options = {
@@ -92,6 +111,10 @@ const createProduct = async (req, res) => {
 };
 
 const editProduct = async (req, res) => {
+	if (process.env.NODE_ENV == "test") {
+		forceError(res, "error edit product");
+	}
+
 	try {
 		const id = req.params.id;
 		const { name, price, CategoryId, imageUrl } = req.body;
@@ -125,6 +148,10 @@ const editProduct = async (req, res) => {
 };
 
 const deleteProduct = async (req, res) => {
+	if (process.env.NODE_ENV == "test") {
+		forceError(res, "error delete product");
+	}
+
 	try {
 		const id = req.params.id;
 		const options = {
@@ -149,6 +176,9 @@ const deleteProduct = async (req, res) => {
 };
 
 const getDetailProductUser = async (req, res) => {
+	if (process.env.NODE_ENV == "test") {
+		forceError(res, "error get detail product user");
+	}
 	const { id } = req.params;
 	if (!id) {
 		return res.status(400).json({
@@ -183,6 +213,9 @@ const getDetailProductUser = async (req, res) => {
 };
 
 const getProductPopular = async (req, res) => {
+	if (process.env.NODE_ENV == "test") {
+		forceError(res, "error get product popular");
+	}
 	try {
 		const options = {
 			attributes: [
