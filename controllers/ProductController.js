@@ -1,9 +1,16 @@
 const Model = require("../models");
-
 const { Product, Category, OrderDetail } = Model;
-
 const sequelize = require("sequelize");
+
 const getProduct = async (req, res) => {
+	// if (process.env.NODE_ENV == "test") {
+	// 	if (Math.floor(Math.random() * 2) === 0) {
+	// 		return res.status(500).json({
+	// 			message: "error",
+	// 		});
+	// 	}
+	// }
+
 	try {
 		const query = req.query;
 		const limit = Number(query.limit) || 10;
@@ -29,13 +36,21 @@ const getProduct = async (req, res) => {
 		});
 	} catch (error) {
 		console.log("error", error);
-		res.status(400).json({
+		res.status(500).json({
 			message: error.message,
 		});
 	}
 };
 
 const getDetailProduct = async (req, res) => {
+	// if (process.env.NODE_ENV == "test") {
+	// 	if (Math.floor(Math.random() * 2) === 0) {
+	// 		return res.status(500).json({
+	// 			message: "error",
+	// 		});
+	// 	}
+	// }
+
 	try {
 		const id = req.params.id;
 		const options = {
@@ -60,6 +75,14 @@ const getDetailProduct = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
+	// if (process.env.NODE_ENV == "test") {
+	// 	if (Math.floor(Math.random() * 2) === 1) {
+	// 		return res.status(500).json({
+	// 			message: "error",
+	// 		});
+	// 	}
+	// }
+
 	try {
 		const { name, price, CategoryId, imageUrl, videoUrl } = req.body;
 		const options = {
@@ -93,6 +116,14 @@ const createProduct = async (req, res) => {
 };
 
 const editProduct = async (req, res) => {
+	// if (process.env.NODE_ENV == "test") {
+	// 	if (Math.floor(Math.random() * 2) === 1) {
+	// 		return res.status(500).json({
+	// 			message: "error",
+	// 		});
+	// 	}
+	// }
+
 	try {
 		const id = req.params.id;
 		const { name, price, CategoryId, imageUrl } = req.body;
@@ -114,7 +145,7 @@ const editProduct = async (req, res) => {
 				message: "The data has been successfully updated",
 			});
 		} else {
-			res.status(400).json({
+			res.status(404).json({
 				message: "Product is not found!",
 			});
 		}
@@ -126,6 +157,14 @@ const editProduct = async (req, res) => {
 };
 
 const deleteProduct = async (req, res) => {
+	// if (process.env.NODE_ENV == "test") {
+	// 	if (Math.floor(Math.random() * 2) === 1) {
+	// 		return res.status(500).json({
+	// 			message: "error",
+	// 		});
+	// 	}
+	// }
+
 	try {
 		const id = req.params.id;
 		const options = {
@@ -133,7 +172,7 @@ const deleteProduct = async (req, res) => {
 		};
 		let product = await Product.findOne(options);
 		if (!product) {
-			res.status(400).json({
+			res.status(404).json({
 				message: "Product is not found!",
 			});
 		} else {
@@ -150,6 +189,13 @@ const deleteProduct = async (req, res) => {
 };
 
 const getDetailProductUser = async (req, res) => {
+	// if (process.env.NODE_ENV == "test") {
+	// 	if (Math.floor(Math.random() * 2) === 1) {
+	// 		return res.status(500).json({
+	// 			message: "error",
+	// 		});
+	// 	}
+	// }
 	const { id } = req.params;
 	if (!id) {
 		return res.status(400).json({
@@ -168,7 +214,7 @@ const getDetailProductUser = async (req, res) => {
 		};
 		const product = await Product.findOne(options);
 		if (!product) {
-			return res.status(400).json({
+			return res.status(404).json({
 				message: "Product not Found",
 			});
 		}
@@ -184,6 +230,13 @@ const getDetailProductUser = async (req, res) => {
 };
 
 const getProductPopular = async (req, res) => {
+	// if (process.env.NODE_ENV == "test") {
+	// 	if (Math.floor(Math.random() * 2) === 1) {
+	// 		return res.status(500).json({
+	// 			message: "error",
+	// 		});
+	// 	}
+	// }
 	try {
 		const options = {
 			attributes: [
@@ -200,7 +253,7 @@ const getProductPopular = async (req, res) => {
 		};
 		const productPopuler = await OrderDetail.findAll(options);
 		if (!productPopuler) {
-			return res.status(400).json({
+			return res.status(404).json({
 				message: "Product not Found",
 			});
 		}
