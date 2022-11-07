@@ -4,6 +4,14 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const getUserById = async (req, res) => {
+	// if (process.env.NODE_ENV == "test") {
+	// 	let cek = Math.floor(Math.random() * 2); 
+	// 	if (cek === 1) {
+	// 		return res.status(500).json({
+	// 			message: "error while get user",
+	// 		});
+	// 	}
+	// }
 	try {
 		const user = req.user;
 		res.status(200).json({
@@ -11,7 +19,7 @@ const getUserById = async (req, res) => {
 			user,
 		});
 	} catch (error) {
-		res.status(400).json({
+		res.status(500).json({
 			message: error.message,
 		});
 	}
@@ -47,7 +55,19 @@ const login = async (req, res) => {
 		};
 
 		const secret = process.env.KEY;
-		const token = jwt.sign(payload, secret, { expiresIn: "1 month" });
+
+		let token = jwt.sign(payload, secret, { expiresIn: "1 hour" });
+
+		if (process.env.NODE_ENV == "test") {
+			token = jwt.sign(payload, secret);
+			// let cek = Math.floor(Math.random() * 2); 
+			// if (cek === 1) {
+			// 	return res.status(500).json({
+			// 		message: "error while authenticating user",
+			// 	});
+			// }
+		}
+
 		return await res.status(200).json({
 			message: "Login successful",
 			token,
@@ -75,6 +95,15 @@ const verifyJwt = (req, res) => {
 };
 
 const createUser = async (req, res) => {
+	// if (process.env.NODE_ENV == "test") {
+	// 	let cek = Math.floor(Math.random() * 2); 
+	// 	if (cek === 1) {
+	// 		return res.status(500).json({
+	// 			message: "error creating user",
+	// 		});
+	// 	}
+	// }
+	
 	try {
 		const { nama, password, email } = req.body;
 
@@ -100,13 +129,14 @@ const createUser = async (req, res) => {
 			message: "Successfully create user",
 		});
 	} catch (error) {
-		res.status(500).json({
-			message: "error creating user",
+		return res.status(500).json({
+			message: "error creating user " + error.message,
 		});
 	}
 };
 
 const getBadgeByUser = async (req, res) => {
+
 	const UserId = req.user.id;
 	try {
 		const [results, metadata] = await db.sequelize
@@ -126,8 +156,6 @@ const getBadgeByUser = async (req, res) => {
 			badge = "Gold";
 		} else if (val > 100000) {
 			badge = "Silver";
-		} else {
-			badge = "Basic";
 		}
 
 		res.status(200).json({

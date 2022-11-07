@@ -10,13 +10,22 @@ const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-	sequelize = new Sequelize(
-		"postgres://gaxgayvkhhceks:b225b01699e5854f77692b59f73e05ce34613d91784dd5337ed6f5cd24074583@ec2-54-163-34-107.compute-1.amazonaws.com:5432/ddmtgvv0s2v3ob"
-	);
+	// sequelize = new Sequelize(
+	// 	"postgres://gaxgayvkhhceks:b225b01699e5854f77692b59f73e05ce34613d91784dd5337ed6f5cd24074583@ec2-54-163-34-107.compute-1.amazonaws.com:5432/ddmtgvv0s2v3ob"
+	// );
+
+	sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
+	// sequelize = new Sequelize(
+	// 	"postgres://gaxgayvkhhceks:b225b01699e5854f77692b59f73e05ce34613d91784dd5337ed6f5cd24074583@ec2-54-163-34-107.compute-1.amazonaws.com:5432/ddmtgvv0s2v3ob"
+	// );
 	sequelize = new Sequelize(
-		"postgres://gaxgayvkhhceks:b225b01699e5854f77692b59f73e05ce34613d91784dd5337ed6f5cd24074583@ec2-54-163-34-107.compute-1.amazonaws.com:5432/ddmtgvv0s2v3ob"
+		config.database,
+		config.username,
+		config.password,
+		config
 	);
+
 }
 
 fs.readdirSync(__dirname)

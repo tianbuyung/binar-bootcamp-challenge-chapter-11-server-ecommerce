@@ -14,7 +14,7 @@ const loginAdmin = async (req, res) => {
 			});
 		}
 
-		const cekPassword = bcrypt.compare(password, cekUser.password);
+		const cekPassword = await bcrypt.compare(password, cekUser.password);
 
 		if (!cekPassword) {
 			return res.status(401).send({
@@ -27,7 +27,11 @@ const loginAdmin = async (req, res) => {
 		};
 
 		const secret = process.env.KEY;
-		const token = jwt.sign(payload, secret, { expiresIn: "1 hour" });
+		let token = jwt.sign(payload, secret, { expiresIn: "1 hour" });
+
+		if (process.env.NODE_ENV == "test") {
+			token = jwt.sign(payload, secret);
+		}
 
 		return await res.status(200).send({
 			message: "Login successful",
